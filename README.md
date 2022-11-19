@@ -33,4 +33,4 @@ Execution algorithm:
 So to sum it up, record_audio_output allows to start recording output audio, and finish it with one shortcut (e.g. `Super + A` to start and `Super + A` to finish).
 Then the file will stay in the clipboard ready to  be pasted into any application like Anki, Telegram, etc.
 
-This is especially useful for immersion-based language learning and Anki cards creation, because with a couple key presses its possible to record original high-quality audio from any movie, TV series or dictionary.
+This is especially useful for immersion-based language learning and Anki cards creation, because with a couple of key presses it's possible to record the original high-quality audio from any movie, TV series or dictionary.
