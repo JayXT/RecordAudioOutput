@@ -15,8 +15,8 @@ In this particular example it looks as follows:
 
 `deviceMonitor="alsa_output.usb-Audioengine_Ltd._Audioengine_2__ABCDEFB1180003-00.analog-stereo.monitor"`
 
-The script with modified deviceMonitor variable should be placed in any convenient location.
-Then user can assign a shortcut to execute it in the system settings:
+The script with modified deviceMonitor variable should be placed in any convenient location and a permission to execute it should be granted.
+Then user can assign a shortcut to run it via the system settings:
 
 ![image](https://user-images.githubusercontent.com/8045344/202848531-43ae65c7-8a83-4bb1-935e-cdce79231c11.png)
 
