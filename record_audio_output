@@ -5,8 +5,10 @@ then
 	# Stop recording audio
 	pkill parec
 else
-	# Output device (use "pacmd list-sinks | grep -e 'name:' -e 'index' -e 'Speakers'" command to determine)
-	deviceMonitor="alsa_output.usb-Audioengine_Ltd._Audioengine_2__ABCDEFB1180003-00.analog-stereo.monitor"
+	# Output device (the default one)
+	# For more use "pacmd list-sinks | grep -e 'name:' -e 'index' -e 'Speakers'" command
+	deviceMonitor="@DEFAULT_MONITOR@"
+
 
 	# 5-character random string
 	rand=$(cat /dev/urandom | tr -dc 'A-Z0-9' | fold -w 7 | head -n 1)
