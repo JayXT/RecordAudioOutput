@@ -13,6 +13,7 @@ Here's a sample of its output:
 ![image](https://user-images.githubusercontent.com/8045344/202847775-7b07fb32-623c-45ef-ba61-5ff13fa3896d.png)
 
 Similar information in case of PipeWire could be accessed via the following command:
+
 `wpctl status`
 
 After the source in use is identified, replace the value of deviceMonitor variable in the script with your device name + ".monitor" suffix.
