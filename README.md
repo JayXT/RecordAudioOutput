@@ -26,7 +26,7 @@ Then user can assign a shortcut to run it via the system settings:
 
 ![image](https://user-images.githubusercontent.com/8045344/202848531-43ae65c7-8a83-4bb1-935e-cdce79231c11.png)
 
-The script has been tested in Debian 11 Xfce. 
+The script has been tested in Debian 11 Xfce and Debian 12 Xfce with PulseAudio. 
 
 Execution algorithm:
 1. Check whether the parec process is already running.
