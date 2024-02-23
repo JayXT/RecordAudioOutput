@@ -31,23 +31,16 @@ If for some reason there's a need to manually specify a sink to record the audio
 
 **PulseAudio**
 
-1. Identify your output device using the following command:
-
+1. Identify your output device using the following command: 
 `pacmd list-sinks | grep -e 'name:' -e 'index' -e 'Speakers'`
-
 Here's a sample of its output:
-
 ![image](https://user-images.githubusercontent.com/8045344/202847775-7b07fb32-623c-45ef-ba61-5ff13fa3896d.png)
-
 2. Replace the value of targetSink variable in the script with your device name + ".monitor" suffix for PulseAudio.
-In this particular example it looks as follows:
-
+In this particular example it looks as follows: 
 `targetSink="alsa_output.usb-Audioengine_Ltd._Audioengine_2__ABCDEFB1180003-00.analog-stereo.monitor"`
 
 **PipeWire**
 
 1. Find your output device (sink) with the following command: 
-
 `wpctl status`
-
 2. Set targetSink variable in the record_audio_output_pw to the number associated with the desired sink.
