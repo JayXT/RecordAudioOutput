@@ -1,7 +1,7 @@
 # RecordAudioOutput
 A custom bash script to record audio output in GNU/Linux.
 
-The script is aimed at GNU/Linux distributions using **PulseAudio** as an audio system with [pulse-audio-utils](https://packages.debian.org/sid/pulseaudio-utils) installed.
+The script is aimed at GNU/Linux distributions using **PulseAudio** as an audio system with [pulse-audio-utils](https://packages.debian.org/sid/pulseaudio-utils) installed. Before using it, please ensure that parec, lame and xclip are also installed.
 
 Script uses the default output device, but it's possible to change it.
 To do that, identify your output source using the following command:
