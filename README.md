@@ -18,12 +18,12 @@ Similar information in case of PipeWire could be accessed via the following comm
 
 `wpctl status`
 
-After the source in use is identified, replace the value of deviceMonitor variable in the script with your device name + ".monitor" suffix for PulseAudio.
+After the PulseAudio source in use is identified, replace the value of deviceMonitor variable in the script with your device name + ".monitor" suffix for PulseAudio.
 In this particular example it looks as follows:
 
 `deviceMonitor="alsa_output.usb-Audioengine_Ltd._Audioengine_2__ABCDEFB1180003-00.analog-stereo.monitor"`
 
-For PipeWire you can use a sink number.
+For PipeWire you can use a desired sink number instead.
 
 The respective script should be placed in any convenient location and a permission to execute it should be granted.
 Then user can assign a shortcut to run it via the system settings:
