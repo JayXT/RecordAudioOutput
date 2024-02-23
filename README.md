@@ -39,7 +39,7 @@ Here's a sample of its output:
 
 ![image](https://user-images.githubusercontent.com/8045344/202847775-7b07fb32-623c-45ef-ba61-5ff13fa3896d.png)
 
-2. After the PulseAudio source in use is identified, replace the value of targetSink variable in the script with your device name + ".monitor" suffix for PulseAudio.
+2. Replace the value of targetSink variable in the script with your device name + ".monitor" suffix for PulseAudio.
 In this particular example it looks as follows:
 
 `targetSink="alsa_output.usb-Audioengine_Ltd._Audioengine_2__ABCDEFB1180003-00.analog-stereo.monitor"`
