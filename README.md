@@ -5,25 +5,7 @@ The solution is aimed at GNU/Linux distributions using either **PipeWire** or **
 
 Before using any of them, please ensure that lame and xclip dependencies are also installed.
 
-Script uses the default output device, but it's possible to change it.
-To do that in PulseAudio, identify your output source using the following command:
-
-`pacmd list-sinks | grep -e 'name:' -e 'index' -e 'Speakers'`
-
-Here's a sample of its output:
-
-![image](https://user-images.githubusercontent.com/8045344/202847775-7b07fb32-623c-45ef-ba61-5ff13fa3896d.png)
-
-Similar information in case of PipeWire could be accessed via the following command:
-
-`wpctl status`
-
-After the PulseAudio source in use is identified, replace the value of target variable in the script with your device name + ".monitor" suffix for PulseAudio.
-In this particular example it looks as follows:
-
-`targetSink="alsa_output.usb-Audioengine_Ltd._Audioengine_2__ABCDEFB1180003-00.analog-stereo.monitor"`
-
-For PipeWire you can use a desired sink number instead.
+Scripts use the default sink (output audio device)
 
 The respective script should be placed in any convenient location and a permission to execute it should be granted.
 Then user can assign a shortcut to run it via the system settings:
@@ -44,3 +26,30 @@ So to sum it up, both script versions allow to start recording output audio, and
 Then the file will stay in the clipboard ready to be pasted into any application like Anki, Telegram, etc.
 
 This is especially useful for immersion-based language learning and Anki cards creation, because with a couple of key presses it's possible to record the original high-quality audio from any movie, TV series or dictionary.
+
+## Additional Notes 
+
+If for some reason there's a need to manually specify a sink to record the audio from, it could be done as follows:
+
+**PulseAudio**
+
+1. Identify your output device using the following command:
+
+`pacmd list-sinks | grep -e 'name:' -e 'index' -e 'Speakers'`
+
+Here's a sample of its output:
+
+![image](https://user-images.githubusercontent.com/8045344/202847775-7b07fb32-623c-45ef-ba61-5ff13fa3896d.png)
+
+2. After the PulseAudio source in use is identified, replace the value of targetSink variable in the script with your device name + ".monitor" suffix for PulseAudio.
+In this particular example it looks as follows:
+
+`targetSink="alsa_output.usb-Audioengine_Ltd._Audioengine_2__ABCDEFB1180003-00.analog-stereo.monitor"`
+
+**PipeWire**
+
+1. Find your output device (sink) with the following command: 
+
+`wpctl status`
+
+2. Set targetSink variable in the record_audio_output_pw to the number associated with the desired sink.
