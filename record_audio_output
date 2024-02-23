@@ -7,7 +7,7 @@ then
 else
 	# Output device (the default one)
 	# For more use "pacmd list-sinks | grep -e 'name:' -e 'index' -e 'Speakers'" command
-	deviceMonitor="@DEFAULT_MONITOR@"
+	targetSink="@DEFAULT_MONITOR@"
 
 
 	# 5-character random string
@@ -17,7 +17,7 @@ else
 	filename="$(xdg-user-dir DOWNLOAD)/out_${rand}.mp3"
 
 	# Record audio to the file
-	parec -d $deviceMonitor --volume=65536 | lame -r -V7 - $filename
+	parec -d $targetSink --volume=65536 | lame -r -V7 - $filename
 
 	# Copy the file to the clipboard
 	echo "file://${filename}"|xclip -i -sel c -t text/uri-list
