@@ -23,7 +23,7 @@ The default execution algorithm:
 So to sum it up, both script versions allow to start recording output audio, and finish it with one shortcut (e.g. `Super + A` to start and `Super + A` to finish).
 Then the file will stay in the clipboard ready to be pasted into any application like Anki, Telegram, etc.
 
-This is especially useful for immersion-based language learning and Anki cards creation, because with a couple of key presses it's possible to record the original high-quality audio from any movie, TV series or dictionary.
+This is especially useful for immersion-based language learning and Anki cards creation, because with a couple of key presses it's possible to record the original high-quality audio from any movie, TV series, dictionary, or service.
 
 ## Additional Notes 
 
