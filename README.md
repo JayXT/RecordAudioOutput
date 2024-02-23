@@ -32,12 +32,12 @@ Then user can assign a shortcut to run it via the system settings:
 
 The record_audio_output script has been tested in Debian 11 Xfce and Debian 12 Xfce with PulseAudio. The record_audio_output_pw has been tested in Fedora 39 GNOME.
 
-Execution algorithm:
+The default execution algorithm:
 1. Check whether parec/pw-record is already running.
 2. If it's running, kill it and thus finish execution/recording, if it's not, proceed with the step 3.
-3. Set a targetSink variable to the appropriate value.
+3. Set a targetSink variable to the default output device.
 4. Generate a random audio name starting with "out_" to be stored in user's Downloads folder.
-5. Record the audio output from a device specified in the targetSink to the output file using parec/pw-record + lame.
+5. Record the audio output from the targetSink to the output file using parec/pw-record + lame.
 6. Copy the audio file to the clipboard with xclip (happens when the audio process is killed and then step 5 terminates).
 
 So to sum it up, both script versions allow to start recording output audio, and finish it with one shortcut (e.g. `Super + A` to start and `Super + A` to finish).
