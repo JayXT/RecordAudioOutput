@@ -18,10 +18,10 @@ Similar information in case of PipeWire could be accessed via the following comm
 
 `wpctl status`
 
-After the PulseAudio source in use is identified, replace the value of deviceMonitor variable in the script with your device name + ".monitor" suffix for PulseAudio.
+After the PulseAudio source in use is identified, replace the value of target variable in the script with your device name + ".monitor" suffix for PulseAudio.
 In this particular example it looks as follows:
 
-`deviceMonitor="alsa_output.usb-Audioengine_Ltd._Audioengine_2__ABCDEFB1180003-00.analog-stereo.monitor"`
+`targetSink="alsa_output.usb-Audioengine_Ltd._Audioengine_2__ABCDEFB1180003-00.analog-stereo.monitor"`
 
 For PipeWire you can use a desired sink number instead.
 
@@ -33,12 +33,12 @@ Then user can assign a shortcut to run it via the system settings:
 The record_audio_output script has been tested in Debian 11 Xfce and Debian 12 Xfce with PulseAudio. The record_audio_output_pw has been tested in Fedora 39 GNOME.
 
 Execution algorithm:
-1. Check whether the audio process (parec or pw-record) is already running.
+1. Check whether parec/pw-record is already running.
 2. If it's running, kill it and thus finish execution/recording, if it's not, proceed with the step 3.
-3. Set output device variable to the appropriate value.
+3. Set a targetSink variable to the appropriate value.
 4. Generate a random audio name starting with "out_" to be stored in user's Downloads folder.
-5. Record the audio output from output device variable to the output file using parec.
-6. Copy the audio file to the clipboard (happens when the audio process is killed and then step 5 terminates).
+5. Record the audio output from a device specified in the targetSink to the output file using parec/pw-record + lame.
+6. Copy the audio file to the clipboard with xclip (happens when the audio process is killed and then step 5 terminates).
 
 So to sum it up, both script versions allow to start recording output audio, and finish it with one shortcut (e.g. `Super + A` to start and `Super + A` to finish).
 Then the file will stay in the clipboard ready to be pasted into any application like Anki, Telegram, etc.
