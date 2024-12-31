@@ -15,7 +15,7 @@ else
   filename="$(xdg-user-dir DOWNLOAD)/out_${rand}.mp3"
 
   # Record audio to the file
-  pw-record --target=$targetSink - | lame -r -V7 - $filename
+  pw-record --target=$targetSink - | lame -r -s 48 -m s -V7 - $filename
 
   # Copy the file to the clipboard
   echo "file://${filename}"|xclip -i -sel c -t text/uri-list
