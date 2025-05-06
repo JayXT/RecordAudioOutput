@@ -17,6 +17,9 @@ else
   # Record audio to the file
   pw-record --target=$targetSink - | lame -r -s 48 -m s -V7 - $filename
 
-  # Copy the file to the clipboard
+  # Copy the file to the clipboard in X11
   echo "file://${filename}"|xclip -i -sel c -t text/uri-list
+
+  # Copy the file to the clipboard in Wayland
+  # wl-copy -t text/uri-list <<< "file://${filename}" --foreground
 fi
