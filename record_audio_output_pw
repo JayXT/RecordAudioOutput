@@ -5,9 +5,6 @@ then
   # Stop recording audio
   pkill pw-record
 else
-  # Get the default WirePlumber sink (output device) ID
-  targetSink=$(wpctl status | grep -oPm 1 '\*\s+\K\d+')
-
   # 5-character random string
   rand=$(cat /dev/urandom | tr -dc 'A-Z0-9' | fold -w 7 | head -n 1)
 
@@ -15,7 +12,7 @@ else
   filename="$(xdg-user-dir DOWNLOAD)/out_${rand}.mp3"
 
   # Record audio to the file
-  pw-record --target=$targetSink - | lame -r -s 48 -m s -V7 - $filename
+  pw-record -P '{ stream.capture.sink=true }' - | lame -r -s 48 -m s -V7 - $filename
 
   # Copy the file to the clipboard in X11
   echo "file://${filename}"|xclip -i -sel c -t text/uri-list
