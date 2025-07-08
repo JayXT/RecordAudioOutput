@@ -20,5 +20,5 @@ else
 	parec -d $targetSink --volume=65536 | lame -r -V7 - $filename
 
 	# Copy the file to the clipboard
-	echo "file://${filename}"|xclip -i -sel c -t text/uri-list
+	echo -n "file://${filename}"|xclip -i -sel c -t text/uri-list
 fi
