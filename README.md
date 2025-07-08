@@ -3,7 +3,7 @@ A custom bash script to record audio output in GNU/Linux.
 
 The solution is aimed at GNU/Linux distributions using either **PulseAudio** or **PipeWire** audio system. In the first case [pulseaudio-utils](https://packages.debian.org/sid/pulseaudio-utils) or alternative package  for your distribution containing **parec** utility should be installed. The script is available in two variations: **record_audio_output** (PulseAudio version) and **record_audio_output_pw** (PipeWire version).
 
-Before using any of them, please ensure that **lame** and **xclip** (X11) **wl-clipboard** (Wayland) dependencies are also installed. For a Wayland + PipeWire setup, the xclip line should be commented out, while the wl-copy line should be uncommented. Both script variations use the default sink (output audio device).
+Before using any of them, please ensure that **lame** and **xclip** (X11) or **wl-clipboard** (Wayland) dependencies are also installed. For a Wayland + PipeWire setup, the xclip line should be commented out, while the wl-copy line should be uncommented. Both script variations use the default sink (output audio device).
 
 The respective script should be placed in any convenient location and a permission to execute it should be granted.
 Then user can assign a shortcut to run it via the system settings:
