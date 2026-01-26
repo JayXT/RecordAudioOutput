@@ -12,7 +12,7 @@ else
   filename="$(xdg-user-dir DOWNLOAD)/out_${rand}.mp3"
 
   # Record audio to the file
-  pw-record -a -P '{ stream.capture.sink=true }' - | lame -r -s 48 -m s -V7 - $filename
+  pw-record -P '{ stream.capture.sink=true }' - | lame -r -s 48 -m s -V7 - $filename
 
   # Copy the file to the clipboard in X11
   echo -n "file://${filename}"|xclip -i -sel c -t text/uri-list
